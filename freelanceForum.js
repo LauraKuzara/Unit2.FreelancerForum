@@ -12,16 +12,22 @@ make a max amount of freelancers to populate
 find the average of the freelancers starting rate
 */
 
-const freelancers = [
-    { name: "Dr. Slice", price: 25, occupation: "gardener" },
-    { name: "Dr. Pressure", price: 51, occupation: "programmer" },
-  ];
+// const freelancers = [
+//     { name: "Dr. Slice", price: 25, occupation: "gardener" },
+//     { name: "Dr. Pressure", price: 51, occupation: "programmer" },
+// ];
 
-const macFreelancers = 10;
+function render() {
+    // Render the freelancers
+    const freelancersId = document.querySelector("#freelancers");
+    // Keep header but clear previous table rows
+    freelancersId.innerHTML =
+    /* html*/
+        `<tr>
+        <th>Name</th>
+        <th>Occupation</th>
+        <th>Starting Price</th>
+        </tr>`;
+};
 
-  function render() {
-    // Render the squares
-    const querySelectedFreeLancers = document.querySelector("#freelancers");
-     
-  }
-  //and the render?
+render()
