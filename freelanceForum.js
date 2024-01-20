@@ -98,7 +98,13 @@ function addFreelancer() {
     const randomName = randomNames[Math.floor(Math.random() * randomNames.length)];
     const randomOccupation = randomOccupations[Math.floor(Math.random() * randomOccupations.length)];
     const randomPrice = randomPrices[Math.floor(Math.random() * randomPrices.length)];
-    freelancers.push({randomName, randomOccupation, randomPrice});
+
+    freelancers.push({name:randomName, occupation:randomOccupation, price:randomPrice});
+
+    render();
+    if (freelancers.length >= maxFreelancers) {
+        clearInterval(freelancerIntervalId);
+    }
 };
 
 
