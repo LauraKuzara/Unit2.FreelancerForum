@@ -23,7 +23,37 @@ function calculateAveragePrice() {
     }, 0);
     const average = sum / freelancers.length;
     return average;
-}
+};
+
+const maxFreelancers = 10;
+
+const randomNames = [
+    "Emma",
+    "Liam",
+    "Olivia",
+    "Noah",
+    "Ava",
+    "Ethan",
+    "Isabella",
+    "Lucas",
+    "Mia",
+    "Mason",
+];
+const randomPrices = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
+
+const randomOccupations = [
+    "Writer",
+    "Teacher",
+    "Engineer",
+    "Doctor",
+    "Nurse",
+    "Artist",
+    "Lawyer",
+    "Chef",
+    "Salesperson",
+    "Developer",
+];  
+
 
 function render() {
     // Render the freelancers
@@ -63,3 +93,13 @@ function render() {
 };
 
 render();
+
+function addFreelancer() {
+    const randomName = randomNames[Math.floor(Math.random() * randomNames.length)];
+    const randomOccupation = randomOccupations[Math.floor(Math.random() * randomOccupations.length)];
+    const randomPrice = randomPrices[Math.floor(Math.random() * randomPrices.length)];
+    freelancers.push({randomName, randomOccupation, randomPrice});
+};
+
+
+const freelancerIntervalId = setInterval(addFreelancer, 1000);
